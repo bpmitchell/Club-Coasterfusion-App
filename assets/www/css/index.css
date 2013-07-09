@@ -1,0 +1,179 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:20px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:none;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.cffooter .ui-btn .ui-btn-inner { padding-top: 40px !important;}
+.cffooter .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+#news .ui-icon { background:  url(img/rss.png) 50% 50% no-repeat; background-size: 32px 32px; }
+#clubcf .ui-icon { background:  url(img/club.png) 50% 50% no-repeat; background-size: 32px 32px;  }
+#videos .ui-icon { background:  url(img/videos.png) 50% 50% no-repeat;  background-size: 32px 32px; }
+#contact .ui-icon { background:  url(img/contact.png) 50% 50% no-repeat;  background-size: 32px 32px; }
+#connect .ui-icon { background:  url(img/connect.png) 50% 50% no-repeat;  background-size: 32px 32px; }
+
+#player {
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+    background: gray;
+    position: absolute;
+    border: solid 2px gray;
+}
+
+.youtube .carousel {
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+}
+
+.youtube .thumbnail {
+    margin: 5px;
+    width: 80%;
+    border: 1px solid black;  
+}
+
+.youtube iframe.player {
+    width: 100%;
+    height: 480px;  
+    overflow: auto;
+    border: 0;
+}
+
+.list {
+   padding: 75px 25px;
+   }
+
+.logo {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right: 20px;
+    margin: auto
+}
+
+#player {
+    width: 240px;
+    height: 320px;
+    overflow: hidden;
+    background: white;
+    position: absolute;
+    border: solid 0px black;
+}
+
+.youtube .carousel {
+    width: 20%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    z-index: 3;
+}
+
+.youtube .thumbnail {
+    margin: 2px;
+    width: 80%;
+    border: 0px solid black;  
+}
+
+.youtube iframe.player {
+    width: 80%;
+    height: 240px;  
+    overflow: auto;
+    border: 0;
+}
